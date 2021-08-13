@@ -28,8 +28,8 @@ func SimpleSlackFunction(w http.ResponseWriter, r *http.Request) {
 
 			if ok && !isBot {
 				externals.SlackWebhook(request["event"])
-				_,err:=externals.CoinGecko(request["event"])
-				log.Print("error:",err)
+				_, err := externals.CoinGecko(request["event"])
+				log.Print("error:", err)
 			}
 		}
 	}
@@ -38,4 +38,3 @@ func SimpleSlackFunction(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(200)
 	fmt.Fprint(w, request)
 }
-

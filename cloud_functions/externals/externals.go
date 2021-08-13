@@ -92,7 +92,7 @@ func CoinGecko(req interface{}) ([]byte, error) {
 	params.Add("ids", idsParam)
 	params.Add("vs_currencies", vsCurrenciesParam)
 
-	coinGeckoUrl = fmt.Sprintf("%s?%s",coinGeckoUrl, params.Encode())
+	coinGeckoUrl = fmt.Sprintf("%s?%s", coinGeckoUrl, params.Encode())
 
 	log.Print("coinGeckoUrl: ", coinGeckoUrl)
 
@@ -101,7 +101,7 @@ func CoinGecko(req interface{}) ([]byte, error) {
 	//	return nil, err
 	//}
 
-	response, err:= http.Get(coinGeckoUrl)
+	response, err := http.Get(coinGeckoUrl)
 	if err != nil {
 		return nil, err
 	}
@@ -119,11 +119,11 @@ func CoinGecko(req interface{}) ([]byte, error) {
 		return nil, err
 	}
 
-	log.Print("respBody: ", respMap, "resp",  string(body), "err: ", err)
+	log.Print("respBody: ", respMap, "resp", string(body), "err: ", err)
 
 	var respString string
 
-	respString+= string(body)
+	respString += string(body)
 
 	//for _, crypto := range allCrytpoCurrencies {
 	//	if cryptoInCurrenciesMap,ok := respMap[crypto]; ok{
